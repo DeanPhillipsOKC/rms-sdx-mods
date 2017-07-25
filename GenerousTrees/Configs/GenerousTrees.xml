@@ -1,0 +1,108 @@
+<!--
+	v1.0: Initial relase.  Destroy gives roughly 1/4 total harvest value.
+-->
+<configs>
+	<config name="blocks">
+		<append xpath="/blocks/block[@name='treeJuniper6m']">
+			<drop event="Destroy" name="wood" count="7"/>
+		</append>
+
+		<append xpath="/blocks/block[@name='treeMountainPine8m']">
+			<drop event="Destroy" name="wood" count="7"/>
+		</append>
+
+		<append xpath="/blocks/block[@name='treeMountainPine13m']">
+			<drop event="Destroy" name="wood" count="17"/>
+		</append>
+
+		<append xpath="/blocks/block[@name='treeMountainPine16m']">
+			<drop event="Destroy" name="wood" count="27"/>
+		</append>
+
+		<append xpath="/blocks/block[@name='treeMountainPine19m']">
+			<drop event="Destroy" name="wood" count="27"/>
+		</append>
+
+		<append xpath="/blocks/block[@name='treeMountainPine20m']">
+			<drop event="Destroy" name="wood" count="37"/>
+		</append>
+		
+		<append xpath="/blocks/block[@name='treeMountainPineDry']">
+			<drop event="Destroy" name="wood" count="27"/>
+		</append>
+
+		<append xpath="/blocks/block[@name='treeBirch10m']">
+			<drop event="Destroy" name="wood" count="7"/>
+		</append>
+		
+		<append xpath="/blocks/block[@name='treeBirch12m']">
+			<drop event="Destroy" name="wood" count="17"/>
+		</append>
+		
+		<append xpath="/blocks/block[@name='treeBirch15m']">
+			<drop event="Destroy" name="wood" count="27"/>
+		</append>
+
+		<append xpath="/blocks/block[@name='treeMaple6m']">
+			<drop event="Destroy" name="wood" count="7"/>
+		</append>
+
+		<append xpath="/blocks/block[@name='treeMaple13m']">
+			<drop event="Destroy" name="wood" count="17"/>
+		</append>
+
+		<append xpath="/blocks/block[@name='treeMaple15m']">
+			<drop event="Destroy" name="wood" count="27"/>
+		</append>
+
+		<append xpath="/blocks/block[@name='treeMaple16m']">
+			<drop event="Destroy" name="wood" count="27"/>
+		</append>
+
+		<append xpath="/blocks/block[@name='treeMaple17m']">
+			<drop event="Destroy" name="wood" count="37"/>
+		</append>
+
+		<append xpath="/blocks/block[@name='treeBurntPine01']">
+			<drop event="Destroy" name="wood" count="7"/>
+		</append>
+
+		<append xpath="/blocks/block[@name='treeBurntPine02']">
+			<drop event="Destroy" name="wood" count="27"/>
+			<drop event="Destroy" name="coal" count="4,7" tool_category="harvestingTools"/>
+		</append>
+
+		<append xpath="/blocks/block[@name='treeBurntPine03']">
+			<drop event="Destroy" name="wood" count="37"/>
+			<drop event="Destroy" name="coal" count="5,10" tool_category="harvestingTools"/>
+		</append>
+
+		<append xpath="/blocks/block[@name='treeDeadTree01']">
+			<drop event="Destroy" name="wood" count="7"/>
+		</append>
+
+		<append xpath="/blocks/block[@name='treeDeadTree02']">
+			<drop event="Destroy" name="wood" count="7"/>
+		</append>
+
+		<append xpath="/blocks/block[@name='treeWinterEverGreen']">
+			<drop event="Destroy" name="wood" count="7"/>
+		</append>
+
+		<append xpath="/blocks/block[@name='treeWinterPine01']">
+			<drop event="Destroy" name="wood" count="17"/>
+		</append>
+
+		<append xpath="/blocks/block[@name='treeWinterPine02']">
+			<drop event="Destroy" name="wood" count="27"/>
+		</append>
+
+		<append xpath="/blocks/block[@name='treeWinterPine03']">
+			<drop event="Destroy" name="wood" count="37"/>
+		</append>
+
+		<append xpath="/blocks/block[@name='treePlainsTree2']">
+			<drop event="Destroy" name="wood" count="7"/>
+		</append>
+	</config>
+</configs>

@@ -1,0 +1,16 @@
+<mod>
+	<info>
+		<author>Dean Phillips</author>
+		<name>Speedy Asphalt</name>
+		<description>
+		Increases movement speed when traveling on asphalt (i.e. roads)
+		</description>
+		<mod_version>1.0</mod_version>
+		<game_version>16.0</game_version>
+		<launcher_version>0.7.0</launcher_version>
+	</info>
+	
+	<config_mods>
+		<import file="Configs\SpeedyAsphalt.xml" />	
+	</config_mods>
+</mod>

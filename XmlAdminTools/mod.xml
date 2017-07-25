@@ -1,0 +1,16 @@
+<mod>
+	<info>
+		<author>Red Moon Survivor</author>
+		<name>XML Admin Tools</name>
+		<description>A few simple XML tools for admin use.
+		</description>
+		<mod_version>v1.0</mod_version>
+		<game_version>Alpha 16.1 (b1)</game_version>
+		<launcher_version>SDX7</launcher_version>
+	</info>
+	
+	<config_mods>
+		<import file="Configs\XmlAdminTools.xml" />
+	</config_mods>
+	
+</mod>

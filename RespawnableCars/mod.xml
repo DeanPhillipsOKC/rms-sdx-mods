@@ -1,0 +1,18 @@
+<mod>
+	<info>
+		<author>Red Moon Survivor</author>
+		<name>Respawnable Cars</name>
+		<description>
+		An SDX port of a mod snippet provided by Anabella on the 7DTD Forums.  Destroyed cars 
+		downgrade to an invisible "plant" that eventually grows into a new car
+		</description>
+		<mod_version>v1.0</mod_version>
+		<game_version>Alpha 16.1 (b1)</game_version>
+		<launcher_version>SDX7</launcher_version>
+	</info>
+	
+	<config_mods>
+		<import file="Configs\RespawnableCars.xml" />
+	</config_mods>
+	
+</mod>

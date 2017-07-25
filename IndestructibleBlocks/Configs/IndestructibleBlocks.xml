@@ -1,0 +1,26 @@
+<configs>
+	<config name="blocks">
+		<append xpath="/blocks">
+			<block id="" name="IndestructibleBlock">
+				<property name="Extends" value="stainlessSteelBlock"/>
+				<property name="DowngradeBlock" value="IndestructibleBlock"/>
+			</block>
+			<block id="" name="IndestructibleLogSpike">
+				<property name="Extends" value="steelLogSpike6"/>
+				<property name="DowngradeBlock" value="IndestructibleLogSpike"/>
+			</block>
+			<block id="" name="IndestructibleIronBarsCentered">
+				<property name="Extends" value="ironBarsCentered"/>
+				<property name="DowngradeBlock" value="IndestructibleIronBarsCentered"/>
+			</block>
+			<block id="" name="IndestructibleStainlessSteelStairs">
+				<property name="Extends" value="stainlessSteelStairs25" />
+				<property name="DowngradeBlock" value="IndestructibleStainlessSteelStairs"/>
+			</block>
+			<block id="" name="IndestructibleStainlessSteelRamp">
+				<property name="Extends" value="stainlessSteelRamp" />
+				<property name="DowngradeBlock" value="stainlessSteelRamp"/>
+			</block>
+		</append>
+	</config>
+</configs>

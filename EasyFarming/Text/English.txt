@@ -1,0 +1,1 @@
+WallOven_Desc = A fully functional stove and oven with reduced heat map intensity / duration, as well as reduced cooking times when compared to the campfire.

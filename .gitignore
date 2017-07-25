@@ -1,0 +1,4 @@
+.vscode
+deploymentPackage/
+ftp.script
+makepkg.sh

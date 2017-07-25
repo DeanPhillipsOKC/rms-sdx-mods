@@ -1,0 +1,34 @@
+<configs>
+	<config name="blocks">
+		<append xpath="/blocks/block[@name='cntCar03SedanDamage2']">
+			<property name="DowngradeBlock" value="CarRespawner-AirBlockStage" />
+		</append>
+		<append xpath="/blocks">
+			<block id="" name="CarRespawner-AirBlockStage">
+				<property name="CustomIcon" value="sidingBluePlasterMiddleBlock" />
+				<property name="IsDeveloper" value="true" />
+				<property name="Class" value="PlantGrowing" />	
+				<property name="Material" value="airEnhanced" />
+				<property name="Shape" value="Invisible" />
+				<property name="Texture" value="250" />
+				<property name="CanMobsSpawnOn" value="false" />
+				<drop event="Destroy" count="0" />	
+				<property name="IsTerrainDecoration" value="true" />
+				<property name="PlantGrowing.Next" value="cntCar03SedanDamage0" />
+				<property name="PlantGrowing.GrowthRate" value="120" /><!-- amount of days for respawn 60 equals 1 day-->
+				<property name="PlantGrowing.FertileLevel" value="0" />
+				<property name="PlantGrowing.IsRandom" value="false" />
+			</block>
+		</append>
+	</config>
+	<config name="materials">
+		<append xpath="/materials">		
+			<material id="airEnhanced">
+				<property name="collidable" value="false" />
+				<property name="lightopacity" value="0" />
+				<property name="Hardness" type="float" value="50000" />
+				<property name="Mass" type="int" value="30" />	  
+			</material>
+		</append>
+	</config>
+</configs>

@@ -1,0 +1,559 @@
+<configs>
+	<config name="blocks">
+		<append xpath="/blocks/block[@name='cntWallOven']">
+			<property name="Class" value="Campfire" />
+			<property name="ImposterDontBlock" value="true" />
+			<property name="IsTerrainDecoration" value="true" />
+			
+			<!-- Stuck way out to the left (1 block left of oven centered on ground
+			<property name="ParticleName" value="chemistryStation" />
+			<property name="ParticleOffset" value="0.5,0.5,0" /> 
+			000
+			0S0
+			P00
+			<property name="ParticleName" value="chemistryStation" />
+			<property name="ParticleOffset" value="0.5,0.5,1.0" /
+			 000
+			p0S0
+             000
+			<property name="ParticleName" value="chemistryStation" />
+			<property name="ParticleOffset" value="1.5,0.5,0" />
+			was using this before switchign to forge particle
+			<property name="ParticleName" value="chemistryStation" />
+			<property name="ParticleOffset" value="-0.7,0.8,0.0" />
+			-->
+			
+			<property name="ParticleName" value="forge" />
+			<property name="ParticleOffset" value="0.5,0,0.5" />
+			<property name="Stacknumber" value="1" />
+			<property name="HeatMapStrength" value="0.5" />
+			<property name="HeatMapTime" value="60" />
+			<property name="HeatMapFrequency" value="25" />
+			<property name="ActiveRadiusEffects" value="+heatSource(1)" />
+			<property class="Workstation">
+				<property name="Modules" value="tools,output,fuel,input" />
+				<property name="Collide" value="melee,bullet,arrow,rocket" />
+			</property>
+			<property name="Group" value="Food/Cooking,Basics,Building" />
+			<property name="DescriptionKey" value="WallOven_Desc" />
+		</append>
+		<remove xpath="/blocks/block[@name='cntWallOven']/property[@name='Class']" />
+		<remove xpath="/blocks/block[@name='cntWallOven']/property[@name='LootList']" />
+
+		<append xpath="/blocks/block[@name='furnaceDrawer']">
+			<property name="Class" value="Forge" />
+			<property name="ImposterDontBlock" value="true" />
+			<property name="IsTerrainDecoration" value="true" />
+			<property name="ParticleName" value="chemistryStation" />
+			<property name="ParticleOffset" value="-0.7,1.0,-1.0" />
+			<property name="Stacknumber" value="1" />
+			<property name="HeatMapStrength" value="2.0" />
+			<property name="HeatMapTime" value="300" />
+			<property name="HeatMapFrequency" value="25" />
+			<property name="ActiveRadiusEffects" value="+heatSource(3)" />
+			<property class="Workstation">
+				<property name="CraftingAreaRecipes" value="furnaceDrawer" />
+				<property name="Modules" value="tools,output,fuel,material_input" />
+				<property name="InputMaterials" value="iron,brass,lead,glass,stone,clay" />
+			</property>
+			<property name="Group" value="Food/Cooking,Basics,Building" />
+			<property name="DescriptionKey" value="WallOven_Desc" />
+			<property class="RepairItems">
+				<property name="rockSmall" value="50" />
+				<property name="clayLump" value="50" />
+				<property name="leather" value="20" />
+			</property>
+			<drop event="Harvest" name="rockSmall" count="30" tool_category="harvestingTools" />
+			<drop event="Harvest" name="rockSmall" count="20" tool_category="Disassemble" />
+			<drop event="Harvest" name="clayLump" count="20" tool_category="Disassemble" />
+			<drop event="Harvest" name="leather" count="5" tool_category="Disassemble" />
+			<drop event="Destroy" count="0" />
+			<drop event="Fall" name="destroyedStone" count="1" prob="0.75" stick_chance="1" />
+			<property name="TakeDelay" value="15" />
+			<property name="Group" value="Basics,Building" />
+			<property name="DescriptionKey" value="forgeDesc" />
+			<property name="EconomicValue" value="214" />
+		</append>
+	</config>
+	<config name="recipes">
+		<append xpath="/recipes">
+
+			<!-- campfire speed ~260s -->
+			<recipe name="antibiotics" count="1" craft_area="cntWallOven" craft_tool="beaker" craft_time="150">
+				<ingredient name="moldyBread" count="4" /> <!-- 60s ea.- -->
+				<ingredient name="potassiumNitratePowder" count="3" /> <!-- 2 ea -->
+				<ingredient name="bottledWater" count="1" /> <!-- 15 ea -->
+			</recipe>
+
+			<!-- campfire speed ~17s -->
+			<recipe name="baconAndEggs" count="1" craft_area="cntWallOven" craft_tool="cookingPot" craft_time="10">
+				<ingredient name="egg" count="2" />
+				<ingredient name="rawMeat" count="1" /> <!-- 15 ea -->
+			</recipe>
+
+			<!-- campfire speed ~10s -->
+			<recipe name="bakedPotato" count="1" craft_area="cntWallOven" craft_tool="cookingGrill" craft_time="5">
+				<ingredient name="potato" count="1" /> <!-- 10 ea -->
+			</recipe>
+
+			<!-- campfire speed ~31s -->
+			<recipe name="blueberryPie" count="1" craft_area="cntWallOven" craft_tool="cookingPot" craft_time="20">
+				<ingredient name="blueberries" count="1" />
+				<ingredient name="egg" count="1" />
+				<ingredient name="cornMeal" count="1" /> <!-- 10 ea -->
+				<ingredient name="bottledWater" count="1" /> <!-- 15 ea -->
+			</recipe>
+
+			<!-- campfire speed ~10s -->
+			<recipe name="bottledWater" count="1" craft_area="cntWallOven" craft_tool="cookingPot" craft_time="5">
+				<ingredient name="snowBall" count="1" />
+				<ingredient name="emptyJar" count="1" />
+			</recipe>
+
+			<!-- campfire speed ~10s -->
+			<recipe name="bottledWater" count="1" craft_area="cntWallOven" craft_tool="cookingPot" craft_time="5">
+				<ingredient name="bottledRiverWater" count="1" />
+			</recipe>
+
+			<!-- campfire speed ~10s -->
+			<recipe name="bottledRiverWater" count="1" craft_area="cntWallOven" craft_time="5">
+				<ingredient name="snowBall" count="1" />
+				<ingredient name="emptyJar" count="1" />
+			</recipe>
+
+			<!-- campfire speed ~10s -->
+			<recipe name="canBoiledWater" count="1" craft_area="cntWallOven" craft_time="5">
+				<ingredient name="canMurkyWater" count="1" />
+			</recipe>
+
+			<!-- campfire speed ~10s -->
+			<recipe name="canBoiledWater" count="1" craft_area="cntWallOven" craft_time="5">
+				<ingredient name="snowBall" count="1" />
+				<ingredient name="canEmpty" count="1" />
+			</recipe>
+
+			<!-- campfire speed ~15s -->
+			<recipe name="charredMeat" count="1" craft_area="cntWallOven" craft_time="10">
+				<ingredient name="rawMeat" count="1" /> <!-- 15 ea -->
+			</recipe>
+
+			<!-- campfire speed ~20s -->
+			<recipe name="coffee" count="1" craft_area="cntWallOven" craft_tool="cookingPot" craft_time="15">
+				<ingredient name="coffeeBeans" count="1" />
+				<ingredient name="bottledWater" count="1" /> <!-- 15 ea -->
+			</recipe>
+
+			<!-- campfire speed ~25s -->
+			<recipe name="cornBread" count="1" craft_area="cntWallOven" craft_tool="cookingPot" craft_time="15">
+				<ingredient name="cornMeal" count="1" /> <!-- 10 ea -->
+				<ingredient name="bottledWater" count="1" /> <!-- 15 ea -->
+			</recipe>
+
+			<!-- campfire speed ~20s -->
+			<recipe name="cornOnTheCob" count="1" craft_area="cntWallOven" craft_tool="cookingPot" craft_time="15">
+				<ingredient name="corn" count="1" /> <!-- 5 ea -->
+				<ingredient name="bottledWater" count="1" /> <!-- 15 ea -->
+			</recipe>
+
+			<!-- campfire speed ~16s -->
+			<recipe name="eggboiled" count="1" craft_area="cntWallOven" craft_tool="cookingPot" craft_time="10">
+				<ingredient name="egg" count="1" />
+				<ingredient name="bottledWater" count="1" /> <!-- 15 ea -->
+			</recipe>
+
+			<!-- campfire speed ~800s -->
+			<recipe name="fertilizer" count="1" craft_area="cntWallOven" craft_tool="beaker" craft_time="600">
+				<ingredient name="turd" count="2" /> <!-- 750 -->
+				<ingredient name="potassiumNitratePowder" count="15" /> <!-- 3 ea -->
+				<ingredient name="dirtFragment" count="3" />
+			</recipe>
+
+			<!-- campfire speed ~46s -->
+			<recipe name="gasCan" count="100" craft_area="cntWallOven" craft_tool="beaker" craft_time="30">
+				<ingredient name="animalFat" count="3" /> <!-- 15 ea -->
+				<ingredient name="grainAlcohol" count="1" /> <!-- 1 ea -->
+			</recipe>
+
+			<!-- campfire speed ~12s -->
+			<recipe name="glue" count="1" craft_area="cntWallOven" craft_tool="cookingPot" craft_time="9">
+				<ingredient name="femur" count="2" />
+				<ingredient name="bottledRiverWater" count="1" /> <!-- 10 ea -->
+			</recipe>
+
+			<!-- campfire speed ~20s -->
+			<recipe name="goldenRodTea" count="1" craft_area="cntWallOven" craft_tool="cookingPot" craft_time="13">
+				<ingredient name="goldenrodPlant" count="1" /> <!-- 5 ea -->
+				<ingredient name="bottledWater" count="1" /> <!-- 15 ea -->
+			</recipe>
+
+			<!-- campfire speed ~55s -->
+			<recipe name="grainAlcohol" count="1" craft_area="cntWallOven" craft_tool="beaker" craft_time="35">
+				<ingredient name="cornMeal" count="3" /> <!-- 10 ea -->
+				<ingredient name="bottledWater" count="1" /> <!-- 15 ea -->
+			</recipe>
+
+			<!-- campfire speed ~30s -->
+			<recipe name="boiledMeat" count="1" craft_area="cntWallOven" craft_tool="cookingPot" craft_time="20">
+				<ingredient name="rawMeat" count="1" /> <!-- 15 ea -->
+				<ingredient name="bottledWater" count="1" /> <!-- 15 ea -->
+			</recipe>
+
+			<!-- campfire speed ~15s -->
+			<recipe name="grilledMeat" count="1" craft_area="cntWallOven" craft_tool="cookingGrill" craft_time="10">
+				<ingredient name="rawMeat" count="2" /> <!-- 15 ea -->
+			</recipe>
+
+			<!-- campfire speed ~80s -->
+			<recipe name="herbalAntibiotics" count="1" craft_area="cntWallOven" craft_tool="cookingPot" craft_time="60">
+				<ingredient name="blueberries" count="5" /> <!-- 8 ea -->
+				<ingredient name="mushrooms" count="3" />  <!-- 5 ea -->
+				<ingredient name="chrysanthemumPlant" count="3" />
+				<ingredient name="potassiumNitratePowder" count="3" />
+				<ingredient name="bottledWater" count="1" /> <!-- 15 ea -->
+			</recipe>
+
+			<!-- campfire speed ~165s -->
+			<recipe name="meatStew" count="1" craft_area="cntWallOven" craft_tool="cookingPot" craft_time="110">
+				<ingredient name="rawMeat" count="5" /> <!-- 15 ea -->
+				<ingredient name="potato" count="5" /> <!-- 10 ea -->
+				<ingredient name="corn" count="5" /> <!-- 5 ea -->
+				<ingredient name="bottledWater" count="1" /> <!-- 15 ea -->
+			</recipe>
+
+			<!-- campfire speed ~20s -->
+			<recipe name="redTea" count="1" craft_area="cntWallOven" craft_tool="cookingPot" craft_time="15">
+				<ingredient name="chrysanthemumPlant" count="1" />
+				<ingredient name="bottledWater" count="1" /> <!-- 15 ea -->
+			</recipe>
+
+			<!-- campfire speed ~26s -->
+			<recipe name="snowberryJuice" count="1" craft_area="cntWallOven" craft_tool="cookingPot" craft_time="18">
+				<ingredient name="snowberryExtract" count="1" />
+				<ingredient name="blueberries" count="2" />
+				<ingredient name="bottledWater" count="1" /> <!-- 15 ea -->
+			</recipe>
+
+			<!-- campfire speed ~1s -->
+			<recipe name="tallow" count="1" craft_area="cntWallOven" craft_tool="cookingPot" craft_time="1">
+				<ingredient name="animalFat" count="1" />
+			</recipe>
+
+			<!-- campfire speed ~115s -->
+			<recipe name="vegetableStew" count="1" craft_area="cntWallOven" craft_tool="cookingPot" craft_time="80">
+				<ingredient name="potato" count="5" /> <!-- 10 ea -->
+				<ingredient name="corn" count="5" /> <!-- 5 ea -->
+				<ingredient name="mushrooms" count="5" /> <!-- 5 ea -->
+				<ingredient name="bottledWater" count="1" /> <!-- 15 ea -->
+			</recipe>
+
+
+			<recipe name="clayLump" count="1" craft_area="furnaceDrawer" material_based="true" craft_time="0.1" craft_exp_gain="0">
+				<ingredient name="unit_clay" count="5" />
+			</recipe>
+			<recipe name="brokenGlass" count="1" craft_area="furnaceDrawer" material_based="true" craft_time="0.1" craft_exp_gain="0">
+				<ingredient name="unit_glass" count="5" />
+			</recipe>
+			<recipe name="rockSmall" count="1" craft_area="furnaceDrawer" material_based="true" craft_time="0.1" craft_exp_gain="0">
+				<ingredient name="unit_stone" count="5" />
+			</recipe>
+			<recipe name="scrapBrass" count="1" craft_area="furnaceDrawer" material_based="true" craft_time="0.1" craft_exp_gain="0">
+				<ingredient name="unit_brass" count="1" />
+			</recipe>
+			<recipe name="scrapIron" count="1" craft_area="furnaceDrawer" material_based="true" craft_time="0.1" craft_exp_gain="0">
+				<ingredient name="unit_iron" count="1" />
+			</recipe>
+			<recipe name="scrapLead" count="1" craft_area="furnaceDrawer" material_based="true" craft_time="0.1" craft_exp_gain="0">
+				<ingredient name="unit_lead" count="1" />
+			</recipe>
+			<recipe name="anvil" count="1" craft_area="furnaceDrawer" material_based="true" craft_time="55">
+				<ingredient name="unit_iron" count="200" />
+				<ingredient name="unit_clay" count="20" />
+			</recipe>
+			<recipe name="brickBlock" count="1" craft_area="furnaceDrawer" material_based="true" craft_time="18">
+				<ingredient name="unit_stone" count="10" />
+				<ingredient name="unit_clay" count="60" />
+			</recipe>
+			<recipe name="brickCNRFull" count="1" craft_area="furnaceDrawer" material_based="true" craft_time="18">
+				<ingredient name="unit_stone" count="10" />
+				<ingredient name="unit_clay" count="60" />
+			</recipe>
+			<recipe name="brickCNRInside" count="1" craft_area="furnaceDrawer" material_based="true" craft_time="18">
+				<ingredient name="unit_stone" count="10" />
+				<ingredient name="unit_clay" count="60" />
+			</recipe>
+			<recipe name="brickCNRRamp" count="1" craft_area="furnaceDrawer" material_based="true" craft_time="18">
+				<ingredient name="unit_stone" count="10" />
+				<ingredient name="unit_clay" count="60" />
+			</recipe>
+			<recipe name="brickStairs25" count="1" craft_area="furnaceDrawer" material_based="true" craft_time="18">
+				<ingredient name="unit_stone" count="10" />
+				<ingredient name="unit_clay" count="60" />
+			</recipe>
+			<recipe name="brickPlate" count="1" craft_area="furnaceDrawer" material_based="true" craft_time="18">
+				<ingredient name="unit_stone" count="10" />
+				<ingredient name="unit_clay" count="60" />
+			</recipe>
+			<recipe name="brickRamp" count="1" craft_area="furnaceDrawer" material_based="true" craft_time="18">
+				<ingredient name="unit_stone" count="10" />
+				<ingredient name="unit_clay" count="60" />
+			</recipe>
+			<recipe name="buckshot" count="1" craft_area="furnaceDrawer" craft_tool="anvil" material_based="true" craft_time="1">
+				<ingredient name="unit_lead" count="3" />
+				<ingredient name="unit_clay" count="1" />
+			</recipe>
+			<recipe name="bulletCasing" count="1" craft_area="furnaceDrawer" craft_tool="anvil" material_based="true" craft_time="1">
+				<ingredient name="unit_brass" count="2" />
+				<ingredient name="unit_clay" count="1" />
+			</recipe>
+			<recipe name="bulletTip" count="1" craft_area="furnaceDrawer" craft_tool="anvil" material_based="true" craft_time="1">
+				<ingredient name="unit_lead" count="2" />
+				<ingredient name="unit_clay" count="1" />
+			</recipe>
+			<recipe name="cement" count="1" craft_area="furnaceDrawer" material_based="true" craft_time="1">
+				<ingredient name="unit_stone" count="5" />
+			</recipe>
+			<recipe name="cookingGrill" count="1" craft_area="furnaceDrawer" craft_tool="anvil" material_based="true" craft_time="8">
+				<ingredient name="unit_iron" count="25" />
+				<ingredient name="unit_clay" count="5" />
+			</recipe>
+			<recipe name="cookingPot" count="1" craft_area="furnaceDrawer" craft_tool="anvil" material_based="true" craft_time="8">
+				<ingredient name="unit_iron" count="25" />
+				<ingredient name="unit_clay" count="5" />
+			</recipe>
+			<recipe name="emptyJar" count="1" craft_area="furnaceDrawer" material_based="true" craft_time="3">
+				<ingredient name="unit_glass" count="10" />
+				<ingredient name="unit_clay" count="1" />
+			</recipe>
+			<recipe name="forgedIron" count="1" craft_area="furnaceDrawer" material_based="true" craft_time="3">
+				<ingredient name="unit_iron" count="10" />
+				<ingredient name="unit_clay" count="5" />
+			</recipe>
+			<recipe name="forgedSteel" count="1" craft_area="furnaceDrawer" craft_tool="forgeCrucible" material_based="true" craft_time="8">
+				<ingredient name="unit_iron" count="20" />
+				<ingredient name="unit_clay" count="10" />
+			</recipe>
+			<recipe name="glassCTRSheet" count="1" craft_area="furnaceDrawer" material_based="true" craft_time="3">
+				<ingredient name="unit_glass" count="10" />
+				<ingredient name="unit_lead" count="3" />
+				<ingredient name="unit_clay" count="1" />
+			</recipe>
+			<recipe name="glassShowerBlock" count="1" craft_area="furnaceDrawer" material_based="true" craft_time="5">
+				<ingredient name="unit_glass" count="14" />
+				<ingredient name="unit_lead" count="4" />
+				<ingredient name="unit_clay" count="1" />
+			</recipe>
+			<recipe name="glassShowerRamp" count="1" craft_area="furnaceDrawer" material_based="true" craft_time="5">
+				<ingredient name="unit_glass" count="14" />
+				<ingredient name="unit_lead" count="4" />
+				<ingredient name="unit_clay" count="1" />
+			</recipe>
+			<recipe name="glassIndustrialCTRPlate" count="1" craft_area="furnaceDrawer" material_based="true" craft_time="3">
+				<ingredient name="unit_glass" count="10" />
+				<ingredient name="unit_lead" count="3" />
+				<ingredient name="unit_clay" count="1" />
+			</recipe>
+			<recipe name="glassIndustrial02CTRPlate" count="1" craft_area="furnaceDrawer" material_based="true" craft_time="3">
+				<ingredient name="unit_glass" count="10" />
+				<ingredient name="unit_lead" count="3" />
+				<ingredient name="unit_clay" count="1" />
+			</recipe>
+			<recipe name="glassBusinessSheet" count="1" craft_area="furnaceDrawer" material_based="true" craft_time="5">
+				<ingredient name="unit_glass" count="14" />
+				<ingredient name="unit_lead" count="5" />
+				<ingredient name="unit_clay" count="2" />
+			</recipe>
+			<recipe name="glassBusinessCTRSheet" count="1" craft_area="furnaceDrawer" material_based="true" craft_time="5">
+				<ingredient name="unit_glass" count="14" />
+				<ingredient name="unit_lead" count="5" />
+				<ingredient name="unit_clay" count="2" />
+			</recipe>
+			<recipe name="glassBusinessBlock" count="1" craft_area="furnaceDrawer" material_based="true" craft_time="5">
+				<ingredient name="unit_glass" count="14" />
+				<ingredient name="unit_lead" count="5" />
+				<ingredient name="unit_clay" count="2" />
+			</recipe>
+			<recipe name="glassBusinessPlate" count="1" craft_area="furnaceDrawer" material_based="true" craft_time="5">
+				<ingredient name="unit_glass" count="14" />
+				<ingredient name="unit_lead" count="5" />
+				<ingredient name="unit_clay" count="2" />
+			</recipe>
+			<recipe name="glassBusinessPlateCurved" count="1" craft_area="furnaceDrawer" material_based="true" craft_time="5">
+				<ingredient name="unit_glass" count="14" />
+				<ingredient name="unit_lead" count="5" />
+				<ingredient name="unit_clay" count="2" />
+			</recipe>
+			<recipe name="glassBulletproofBlock" count="1" craft_area="furnaceDrawer" craft_tool="forgeCrucible" material_based="true" craft_time="50">
+				<ingredient name="unit_glass" count="110" />
+				<ingredient name="unit_stone" count="10" />
+				<ingredient name="unit_lead" count="40" />
+				<ingredient name="unit_iron" count="20" />
+				<ingredient name="unit_clay" count="20" />
+			</recipe>
+			<recipe name="glassBulletproofPlate" count="1" craft_area="furnaceDrawer" craft_tool="forgeCrucible" material_based="true" craft_time="55">
+				<ingredient name="unit_glass" count="110" />
+				<ingredient name="unit_stone" count="10" />
+				<ingredient name="unit_lead" count="40" />
+				<ingredient name="unit_iron" count="20" />
+				<ingredient name="unit_clay" count="20" />
+			</recipe>
+			<recipe name="glassBulletproofCTRPlate" count="1" craft_area="furnaceDrawer" craft_tool="forgeCrucible" material_based="true" craft_time="55">
+				<ingredient name="unit_glass" count="110" />
+				<ingredient name="unit_stone" count="10" />
+				<ingredient name="unit_lead" count="40" />
+				<ingredient name="unit_iron" count="20" />
+				<ingredient name="unit_clay" count="20" />
+			</recipe>
+			<recipe name="glassBulletproofPlateCurved" count="1" craft_area="furnaceDrawer" craft_tool="forgeCrucible" material_based="true" craft_time="55">
+				<ingredient name="unit_glass" count="110" />
+				<ingredient name="unit_stone" count="10" />
+				<ingredient name="unit_lead" count="40" />
+				<ingredient name="unit_iron" count="20" />
+				<ingredient name="unit_clay" count="20" />
+			</recipe>
+			<recipe name="glassBulletproofRamp" count="1" craft_area="furnaceDrawer" craft_tool="forgeCrucible" material_based="true" craft_time="50">
+				<ingredient name="unit_glass" count="110" />
+				<ingredient name="unit_stone" count="10" />
+				<ingredient name="unit_lead" count="40" />
+				<ingredient name="unit_iron" count="20" />
+				<ingredient name="unit_clay" count="20" />
+			</recipe>
+			<recipe name="ironArrowHead" count="1" craft_area="furnaceDrawer" craft_tool="anvil" material_based="true" craft_time="1">
+				<ingredient name="unit_iron" count="2" />
+				<ingredient name="unit_clay" count="1" />
+			</recipe>
+			<recipe name="ironBars" count="1" craft_area="furnaceDrawer" craft_tool="anvil" material_based="true" craft_time="30">
+				<ingredient name="unit_iron" count="100" />
+				<ingredient name="unit_clay" count="20" />
+			</recipe>
+			<recipe name="ironBarsCentered" count="1" craft_area="furnaceDrawer" craft_tool="anvil" material_based="true" craft_time="30">
+				<ingredient name="unit_iron" count="100" />
+				<ingredient name="unit_clay" count="20" />
+			</recipe>
+			<recipe name="macheteBlade" count="1" craft_area="furnaceDrawer" craft_tool="forgeCrucible" material_based="true" craft_time="60">
+				<ingredient name="unit_iron" count="200" />
+				<ingredient name="unit_clay" count="40" />
+			</recipe>
+			<recipe name="metalTrussingBlock" count="1" craft_area="furnaceDrawer" craft_tool="anvil" material_based="true" craft_time="12">
+				<ingredient name="unit_iron" count="40" />
+				<ingredient name="unit_clay" count="5" />
+			</recipe>
+			<recipe name="metalTrussingRamp" count="1" craft_area="furnaceDrawer" craft_tool="anvil" material_based="true" craft_time="12">
+				<ingredient name="unit_iron" count="40" />
+				<ingredient name="unit_clay" count="5" />
+			</recipe>
+			<recipe name="minibikeChassis" count="1" craft_area="furnaceDrawer" craft_tool="anvil" material_based="true" craft_time="55">
+				<ingredient name="unit_iron" count="200" />
+				<ingredient name="unit_clay" count="20" />
+			</recipe>
+			<recipe name="nail" count="1" craft_area="furnaceDrawer" craft_tool="anvil" material_based="true" craft_time="0.5">
+				<ingredient name="unit_iron" count="1" />
+				<ingredient name="unit_clay" count="1" />
+			</recipe>
+			<recipe name="rebarFrameBlock" count="1" craft_area="furnaceDrawer" craft_tool="anvil" material_based="true" craft_time="1.5">
+				<ingredient name="unit_iron" count="5" />
+				<ingredient name="unit_clay" count="1" />
+			</recipe>
+			<recipe name="rebarFrameCNRInside" count="1" craft_area="furnaceDrawer" craft_tool="anvil" material_based="true" craft_time="1.5">
+				<ingredient name="unit_iron" count="5" />
+				<ingredient name="unit_clay" count="1" />
+			</recipe>
+			<recipe name="rebarFramePillar100" count="1" craft_area="furnaceDrawer" craft_tool="anvil" material_based="true" craft_time="1.5">
+				<ingredient name="unit_iron" count="5" />
+				<ingredient name="unit_clay" count="1" />
+			</recipe>
+			<recipe name="rebarFrameRamp" count="1" craft_area="furnaceDrawer" craft_tool="anvil" material_based="true" craft_time="1.5">
+				<ingredient name="unit_iron" count="5" />
+				<ingredient name="unit_clay" count="1" />
+			</recipe>
+			<recipe name="rocketCasing" count="1" craft_area="furnaceDrawer" craft_tool="toolAndDieSet" material_based="true" craft_time="20">
+				<ingredient name="unit_iron" count="50" />
+				<ingredient name="unit_clay" count="30" />
+			</recipe>
+			<recipe name="rocketTip" count="1" craft_area="furnaceDrawer" craft_tool="toolAndDieSet" material_based="true" craft_time="20">
+				<ingredient name="unit_lead" count="50" />
+				<ingredient name="unit_clay" count="30" />
+			</recipe>
+			<recipe name="shortMetalPipe" count="1" craft_area="furnaceDrawer" material_based="true" craft_time="3.75">
+				<ingredient name="unit_iron" count="10" />
+				<ingredient name="unit_clay" count="5" />
+			</recipe>
+			<recipe name="steelArrowHead" count="1" craft_area="furnaceDrawer" craft_tool="forgeCrucible" material_based="true" craft_time="1.5">
+				<ingredient name="unit_iron" count="5" />
+				<ingredient name="unit_clay" count="1" />
+			</recipe>
+			<recipe name="wroughtIronFenceSheet" count="1" craft_area="furnaceDrawer" craft_tool="anvil" material_based="true" craft_time="4">
+				<ingredient name="unit_iron" count="15" />
+				<ingredient name="unit_clay" count="1" />
+			</recipe>
+			<recipe name="trapGlassBusinessSheet1x1" count="1" craft_area="furnaceDrawer" material_based="true" craft_time="8">
+				<ingredient name="unit_glass" count="20" />
+				<ingredient name="unit_stone" count="5" />
+				<ingredient name="unit_lead" count="5" />
+				<ingredient name="unit_clay" count="3" />
+			</recipe>
+			<recipe name="trapGlassBusinessCTRSheet1x1" count="1" craft_area="furnaceDrawer" material_based="true" craft_time="8">
+				<ingredient name="unit_glass" count="20" />
+				<ingredient name="unit_stone" count="5" />
+				<ingredient name="unit_lead" count="5" />
+				<ingredient name="unit_clay" count="3" />
+			</recipe>
+			<recipe name="brickWedgeIncline" count="1" craft_area="furnaceDrawer" material_based="true" craft_time="19">
+				<ingredient name="unit_stone" count="10" />
+				<ingredient name="unit_clay" count="60" />
+			</recipe>
+			<recipe name="brickWedgeTipCNRFullTop" count="1" craft_area="furnaceDrawer" material_based="true" craft_time="19">
+				<ingredient name="unit_stone" count="10" />
+				<ingredient name="unit_clay" count="60" />
+			</recipe>
+			<recipe name="brickWedgeTipCNRFullBottom" count="1" craft_area="furnaceDrawer" material_based="true" craft_time="19">
+				<ingredient name="unit_stone" count="10" />
+				<ingredient name="unit_clay" count="60" />
+			</recipe>
+			<recipe name="brickWedgeCNRInsideBottom" count="1" craft_area="furnaceDrawer" material_based="true" craft_time="19">
+				<ingredient name="unit_stone" count="10" />
+				<ingredient name="unit_clay" count="60" />
+			</recipe>
+			<recipe name="brickWedgeCNRInsideTop" count="1" craft_area="furnaceDrawer" material_based="true" craft_time="19">
+				<ingredient name="unit_stone" count="10" />
+				<ingredient name="unit_clay" count="60" />
+			</recipe>
+			<recipe name="brickStairs25CornerCNR" count="1" craft_area="furnaceDrawer" material_based="true" craft_time="19">
+				<ingredient name="unit_stone" count="10" />
+				<ingredient name="unit_clay" count="60" />
+			</recipe>
+			<recipe name="brickCTRpole" count="1" craft_area="furnaceDrawer" material_based="true" craft_time="19">
+				<ingredient name="unit_stone" count="10" />
+				<ingredient name="unit_clay" count="60" />
+			</recipe>
+			<recipe name="brickCNRRampFiller" count="1" craft_area="furnaceDrawer" material_based="true" craft_time="19">
+				<ingredient name="unit_stone" count="10" />
+				<ingredient name="unit_clay" count="60" />
+			</recipe>
+			<recipe name="brickArch" count="1" craft_area="furnaceDrawer" material_based="true" craft_time="19">
+				<ingredient name="unit_stone" count="10" />
+				<ingredient name="unit_clay" count="60" />
+			</recipe>
+			<recipe name="insulator" count="1" craft_area="furnaceDrawer" craft_tool="toolAndDieSet" material_based="true" craft_time="8">
+				<ingredient name="unit_iron" count="2" />
+				<ingredient name="unit_glass" count="10" />
+				<ingredient name="unit_clay" count="20" />
+			</recipe>
+			<recipe name="steelDart" count="1" craft_area="furnaceDrawer" craft_tool="anvil" material_based="true" craft_time="1">
+				<ingredient name="unit_iron" count="3" />
+				<ingredient name="unit_clay" count="1" />
+			</recipe>
+			<recipe name="brickWedgeStairs" count="1" craft_area="furnaceDrawer" material_based="true" craft_time="12.5">
+				<ingredient name="unit_stone" count="10" />
+				<ingredient name="unit_clay" count="60" />
+			</recipe>
+			<recipe name="brickWedgeTipStairs" count="1" craft_area="furnaceDrawer" material_based="true" craft_time="12.5">
+				<ingredient name="unit_stone" count="10" />
+				<ingredient name="unit_clay" count="60" />
+			</recipe>
+			
+		</append>
+	</config>
+	<config name="loot">
+		<remove xpath="lootcontainers/lootplaceholders/placeholder[@name='lootConstructionSuppliesHelper']/block[@name='cntWallOven']" />
+	</config>
+</configs>

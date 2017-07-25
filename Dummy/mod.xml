@@ -1,0 +1,10 @@
+<mod>
+	<info>
+		<author>Red Moon Survivor</author>
+		<name>Dummy</name>
+		<description>A near-blank class to avoid an SDX linking error when building a set of mods without any compilable code.</description>
+		<mod_version>1.0</mod_version>
+		<game_version>16.0</game_version>
+		<launcher_version>0.7.0</launcher_version>
+	</info>
+</mod>

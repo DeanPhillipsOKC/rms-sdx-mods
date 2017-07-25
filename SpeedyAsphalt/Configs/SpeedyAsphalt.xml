@@ -1,0 +1,7 @@
+<configs>
+	<config name="materials">
+		<append xpath="/materials/material[@id='Mconcrete']">
+			<property name="movement_factor" value="1.3" />
+		</append>
+	</config>
+</configs>

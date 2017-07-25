@@ -1,0 +1,30 @@
+<configs>
+	<config name="items">
+		<append xpath="/items">
+			<item id="" name="hammerOfGod">
+				<property name="CreativeMode" value="Dev"/>
+				<property name="CustomIcon" value="clawHammer"/> <property name="CustomIconTint" value="ffa0a0"/>
+				<property name="Meshfile" value="Items/Tools/hammerPrefab"/>
+				<property name="Material" value="metal"/>
+				<property name="HoldType" value="32"/>
+				<property name="DegradationBreaksAfter" value="true"/>
+				<property name="SoundJammed" value="ItemNeedsRepair"/>
+				<property name="SoundDestroy" value="wooddestroy1"/>
+				<property class="Action0">
+					<property name="Class" value="Melee"/>
+					<property name="Delay" value="0.7"/>
+					<property name="Range" value="40"/>
+					<property name="Block_range" value="40"/>
+					<property name="Sphere" value="0.4"/>
+					<property name="Sound_start" value="swoosh"/>
+					<property name="Stamina_usage" value="0"/>
+				</property>
+				<property class="Attributes">
+					<property name="EntityDamage" value="500,5000"/>
+					<property name="BlockDamage" value="500,20000"/>
+					<property name="DismembermentBaseChance" value="1"/>
+				</property>
+			</item>
+		</append>
+	</config>
+</configs>
