@@ -843,28 +843,27 @@
 	</window>
 
 	<!-- RMS: Added super forge -->
-	<!-- widened window to make room for multiple columns in the input section -->
-	<window name="windowSuperForgeInput" width="386" height="204" panel="Right"
+	<window name="windowSuperForgeInput" width="228" height="204" panel="Right"
 		controller="WorkstationMaterialInputWindow" materials_accepted="molteniron,brass,lead,glass,stone,clay" valid_materials_color="[green]" invalid_materials_color="[red]" cursor_area="true" >
 
 		<panel style="header.panel">
 			<sprite style="header.icon" sprite="ui_game_symbol_forge"/>
 			<label style="header.name" text="INPUT" text_key="xuiSmelting" />
 		</panel>
-
-		<sprite depth="2" name="backgroundMain" sprite="menu_empty3px" pos="0,-46" height="153" color="[black]" type="sliced" fillcenter="false" on_press="true" />
+<!-- Was 224 -->
+		<sprite depth="2" name="backgroundMain" sprite="menu_empty3px" pos="0,-46" height="228" color="[black]" type="sliced" fillcenter="false" on_press="true" />
 		<rect name="content" depth="1" pos="0,-46" height="153">
 
 			<!-- RMS: Was 2 rows and 1 column.  Now is significantly bigger -->
-			<grid depth="7" rows="2" cols="2" pos="3,-3" cell_width="75" cell_height="75" controller="WorkstationMaterialInputGrid" repeat_content="true">
+			<grid depth="7" rows="3" cols="1" pos="3,-3" cell_width="75" cell_height="75" controller="WorkstationMaterialInputGrid" repeat_content="true">
 				<item_stack name="0"/>
 			</grid>
 		</rect>
 
-		<!-- RMS: x position was 78.  Moved over two more 78px blocks and added 2 px for padding -->
-		<rect name="content2" depth="0" pos="157, -49" width="147" height="148">
+<!-- was 216 -->
+		<rect name="content2" depth="0" pos="78, -49" width="147" height="228">
 			<sprite depth="1" color="[mediumGrey]" type="sliced" on_press="true"/>
-			<grid rows="6" cols="1" pos="3,-3" cell_width="147" cell_height="24"  repeat_content="true">
+			<grid rows="6" cols="1" pos="3,-3" cell_width="147" cell_height="36"  repeat_content="true">
 				<forge_material name="0"/>
 			</grid>
 		</rect>
@@ -891,13 +890,13 @@
 
 	<!-- RMS: SuperForge -->
 	<window name="windowSuperForgeOutput" width="228" height="198" anchor="CenterTop" panel="Right" cursor_area="true" >
-		<panel style="header.panel">
+		<panel style="header.panel" pos="0,-68">
 			<sprite style="header.icon" sprite="ui_game_symbol_loot_sack"/>
 			<label style="header.name" text="OUTPUT" text_key="xuiOutput" />
 		</panel>
 
-
-		<rect name="content" depth="0" pos="0,-46" height="150" disablefallthrough="true" on_press="true">
+<!-- was -116 -->
+		<rect name="content" depth="0" pos="0,-115" height="150" disablefallthrough="true" on_press="true">
 			<sprite depth="2" name="backgroundMain" sprite="menu_empty3px" height="150" color="[black]" type="sliced" fillcenter="false" on_press="true" />
 				<grid name="inventory" rows="2" cols="3" pos="3,-3" cell_width="75" cell_height="75" controller="WorkstationOutputGrid" repeat_content="true">
 					<item_stack name="0"/>
